@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchTopics } from "../utils/nc-news-API";
+// import { sortArticlesByTopicSlug } from "../utils/sortArticlesByTopic";
 
-const Topics = () => {
+const Topics = ({ articles, setArticles }) => {
     const [topics, setTopics] = useState([]);
-
+    console.log(articles, "topics");
     useEffect(() => {
         fetchTopics().then((topicNames) => {
             setTopics(topicNames);
@@ -17,11 +18,12 @@ const Topics = () => {
             <ul>
             {topics.map((topic) => {
                 return (
-                    <li key={topic.slug}>{topic.slug}
-                    
-                    </li>
+                    // <button key={topic.slug} 
+                    // onClick={() => sortArticlesByTopicSlug(topic.slug)}>{topic.slug}</button>
+                    <li key={topic.slug}><Link to={`/topics/${topic.slug}`}>{topic.slug}</Link></li>
                 )
             })}
+            <li><Link to={`/`}>All Articles</Link></li>
             </ul>
         </div>
     )
