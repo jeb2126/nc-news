@@ -30,8 +30,11 @@ const ArticleList = () => {
     // // setErr "error"
 
     const incVotes = (article_id) => {
+        console.log("Hi", article_id);
         setVoteChange((currCount) => currCount + 1);
+        console.log(voteChange, "votechange")
         patchArticlesVotes(article_id);
+        
     }
 
 

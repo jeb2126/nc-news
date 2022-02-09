@@ -24,5 +24,9 @@ export const fetchArticlesByTopic = (topic, sort_by, order) => {
 }
 
 export const patchArticlesVotes = (article_id) => {
-    return ncNewsApi.patch(`/articles/${article_id}`, {inc_votes: 1});
+    console.log(article_id, "API");
+    return ncNewsApi.patch(`/articles/${article_id}`, {inc_votes: 1})
+    .then((res) => {
+        return res.data.article;
+    });
 }
