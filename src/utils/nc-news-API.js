@@ -10,18 +10,22 @@ export const fetchTopics = () => {
     });
 }
 
-// export const fetchArticles = () => {
-//     return ncNewsApi.get('/articles').then((res) => {
-//         return res.data.articles;
-//     });
-// }
 
-export const fetchArticlesByTopic = (topic) => {
+export const fetchArticlesByTopic = (topic, sort_by, order) => {
     return ncNewsApi.get('/articles', {
         params: {
-            topic: topic
+            topic: topic,
+            sort_by: sort_by,
+            order: order
         }
     }).then((res) => {
+        console.log(res.data.articles);
+        return res.data.articles;
+    })
+}
+
+export const patchArticlesVotes = (article_id) => {
+    return ncNewsApi.patch(`/articles/${article_id}`).then((res) => {
         return res.data.articles;
     })
 }

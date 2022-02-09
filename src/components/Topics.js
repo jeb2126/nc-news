@@ -5,7 +5,7 @@ import { fetchTopics } from "../utils/nc-news-API";
 
 const Topics = ({ articles, setArticles }) => {
     const [topics, setTopics] = useState([]);
-    console.log(articles, "topics");
+    //console.log(articles, "topics");
     useEffect(() => {
         fetchTopics().then((topicNames) => {
             setTopics(topicNames);
