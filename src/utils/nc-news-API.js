@@ -19,13 +19,10 @@ export const fetchArticlesByTopic = (topic, sort_by, order) => {
             order: order
         }
     }).then((res) => {
-        console.log(res.data.articles);
         return res.data.articles;
     })
 }
 
 export const patchArticlesVotes = (article_id) => {
-    return ncNewsApi.patch(`/articles/${article_id}`).then((res) => {
-        return res.data.articles;
-    })
+    return ncNewsApi.patch(`/articles/${article_id}`, {inc_votes: 1});
 }

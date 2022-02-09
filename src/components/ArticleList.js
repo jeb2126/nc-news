@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { fetchArticles, fetchArticlesByTopic } from "../utils/nc-news-API";
+import { fetchArticles, fetchArticlesByTopic, patchArticlesVotes } from "../utils/nc-news-API";
 import { useParams, Link, useLocation } from "react-router-dom";
-import Votes from "./Votes";
+
 
 const ArticleList = () => {
     const [articles, setArticles] = useState([]);
+    const [voteChange, setVoteChange] = useState(0);
     const { topic } = useParams();
     
     useEffect(() => {
         fetchArticlesByTopic(topic).then((items) => {
-            console.log(items);
             setArticles(items);
         })
     }, [topic]);
@@ -20,6 +20,18 @@ const ArticleList = () => {
         }) .catch((err) => {
             console.log(err);
         });
+    }
+
+    // set article votes in useState
+    // Increase votes count by 1
+    // make PATCH request to API 
+    // create error handling :
+    // // create err useState to null
+    // // setErr "error"
+
+    const incVotes = (article_id) => {
+        setVoteChange((currCount) => currCount + 1);
+        patchArticlesVotes(article_id);
     }
 
 
@@ -39,9 +51,8 @@ const ArticleList = () => {
                             <h3>{article.title}</h3>
                             <p>{article.author}</p>
                             <p>Comments({article.comment_count})</p>
-                            {/* <button onClick={() => handleClickVotes}>{article.votes}</button> */}
+                            <button onClick={() => incVotes(article.article_id)}>👍 {article.votes + voteChange}</button>
                         </li>
-                        <li><Votes articles={articles} setArticles={setArticles}/></li>
                     </div>
                 )
             })}
