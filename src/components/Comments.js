@@ -28,7 +28,8 @@ const Comments = () => {
                         <div className="comments__body">
                             <form>
                                 <label className="comments__input">
-
+                                    Make a Comment:
+                                    <input type="text" name></input>
                                 </label>
                             </form>
                             <li className="comments" key={comment.comment_id}> 
