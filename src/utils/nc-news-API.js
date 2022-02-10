@@ -42,3 +42,10 @@ export const fetchCommentsByArticleId = (article_id) => {
         return res.data.comments;
     })
 }
+
+export const postComment = (article_id, username, body) => {
+    return ncNewsApi.post(`/articles/${article_id}/comments`, {username: username, body: body})
+    .then((res) => {
+        return res.data.comments;
+    });
+}

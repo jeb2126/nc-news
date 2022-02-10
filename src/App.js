@@ -4,30 +4,34 @@ import Topics from './components/Topics';
 import ArticleList from './components/ArticleList';
 import Article from './components/Article';
 import Comments from './components/Comments';
+import Login from './components/Login';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { useState } from 'react';
+import { ProfileContext } from './contexts/Profile';
 
 function App() {
   // To do:
-  // create context for user login
-  // set up default user 
   // Post a new comment to an existing article as default user
   // delete own comments as default user 
+  const [profile, setProfile] = useState();
   
   return (
-    <BrowserRouter>
-      <div className="App">
-         <Header />
-         <Topics />
-         <Routes>
-            <Route path="/" element={<ArticleList />} />
-            <Route path="/topics/:topic" element={<ArticleList />}></Route>
-            <Route path="/articles" element={<ArticleList />}></Route>
-            <Route path="/articles/:article_id" element={<Article />}></Route>
-            <Route path="/articles/:article_id/comments" element={<Comments />}></Route>
-          </Routes>
-      </div>
-    </BrowserRouter>
+    <ProfileContext.Provider value={{ profile, setProfile}}>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Topics />
+          <Routes>
+              <Route path="/" element={<ArticleList />}></Route>
+              <Route path="/login" element={<Login />}></Route> 
+              <Route path="/topics/:topic" element={<ArticleList />}></Route>
+              <Route path="/articles" element={<ArticleList />}></Route>
+              <Route path="/articles/:article_id" element={<Article />}></Route>
+              <Route path="/articles/:article_id/comments" element={<Comments />}></Route>
+            </Routes>
+        </div>
+      </BrowserRouter>
+    </ProfileContext.Provider>
   );
 }
 

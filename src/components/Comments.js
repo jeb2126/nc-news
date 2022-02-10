@@ -1,10 +1,17 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
-import { fetchCommentsByArticleId } from "../utils/nc-news-API";
+import { fetchCommentsByArticleId, postComment } from "../utils/nc-news-API";
+import { ProfileContext } from "../contexts/Profile";
+
+// create comment form:
+// 2 input: username, body
+// form calls handle click function
+// handle click function
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
     const { article_id } = useParams();
+    const { profile, setProfile } = useContext(ProfileContext);
 
     useEffect(() => {
         fetchCommentsByArticleId(article_id).then((opinions) => {
@@ -18,12 +25,19 @@ const Comments = () => {
             <ul>
                 {comments.map((comment) => {
                     return (
-                        <li className="comments" key={comment.comment_id}> 
-                            <h3>{comment.author}</h3>
-                            <p>{comment.votes}</p>
-                            <p>{comment.created_at}</p>
-                            <p>{comment.body}</p>
-                        </li>
+                        <div className="comments__body">
+                            <form>
+                                <label className="comments__input">
+
+                                </label>
+                            </form>
+                            <li className="comments" key={comment.comment_id}> 
+                                <h3>{comment.author}</h3>
+                                <p>{comment.votes}</p>
+                                <p>{comment.created_at}</p>
+                                <p>{comment.body}</p>
+                            </li>
+                        </div>
                     )
                 })}
             </ul>
