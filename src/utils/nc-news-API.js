@@ -23,10 +23,22 @@ export const fetchArticlesByTopic = (topic, sort_by, order) => {
     })
 }
 
-export const patchArticlesVotes = (article_id) => {
+export const patchArticlesVotes = (article_id, voteValue) => {
     console.log(article_id, "API");
-    return ncNewsApi.patch(`/articles/${article_id}`, {inc_votes: 1})
+    return ncNewsApi.patch(`/articles/${article_id}`, {inc_votes: voteValue})
     .then((res) => {
         return res.data.article;
     });
+}
+
+export const fetchArticleByArticleId = (article_id) => {
+    return ncNewsApi.get(`/articles/${article_id}`).then((res) => {
+        return res.data.article;
+    })
+}
+
+export const fetchCommentsByArticleId = (article_id) => {
+    return ncNewsApi.get(`/articles/${article_id}/comments`).then((res) => {
+        return res.data.comments;
+    })
 }
