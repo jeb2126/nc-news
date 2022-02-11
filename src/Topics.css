@@ -1,0 +1,18 @@
+.topicList {
+    background-color: #f0f2f5;
+}
+
+.Topics__header {
+    margin-top: 5vh;
+}
+
+.Topics__link {
+    display: inline;
+    float: left;
+    margin: 2%;
+}
+
+.Topics__container {
+    display: flex;
+    justify-content:center
+}
