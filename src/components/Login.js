@@ -1,6 +1,10 @@
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useContext, useState } from 'react';
 import { ProfileContext } from '../contexts/Profile';
 import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
     const { profile, setProfile } = useContext(ProfileContext);
@@ -33,7 +37,7 @@ const Login = () => {
                 <input type="text" name="username" onChange={handleChange}></input>
             </label>
             {error ? <p className="login__error">Invalid Username</p> : <p />}
-            <button>Login</button>
+            <button variant="primary">Login</button>{' '}
         </form>
     )
 }

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import Profile from "./Profile";
 
 export const Header = () => {
-    const loginLink = <Link to="/login">Login</Link>;
+    const loginLink = <Link className="Header__Login" to="/login">Login</Link>;
     let loggedInAs = <p></p>;
     const navigate = useNavigate();
     const { profile, setProfile } = useContext(ProfileContext);
@@ -24,8 +24,8 @@ export const Header = () => {
     }
 
     return ( 
-    <header>
-        <h1 className="Header"><Link to={'/'}>NC-News</Link></h1>
+    <header className="Header">
+        <h1><Link className="Header__title" to={'/'}>NC-News</Link></h1>
         {profile ? loggedInAs : loginLink}
     </header>
     )

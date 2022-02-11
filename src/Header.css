@@ -1,0 +1,14 @@
+.Header {
+    background-color: #5da9dd;
+    padding-top: 10vh;
+}
+
+.Header__title {
+    color: white;
+}
+
+.Header__Login {
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 5%;
+}

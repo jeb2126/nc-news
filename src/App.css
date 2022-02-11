@@ -31,14 +31,10 @@
   }
 }
 
-.Header {
-  background-color: red;
-}
-
 .topicList {
-  background-color: green;
+  background-color: #f0f2f5;
 }
 
 .articleItems {
-  background-color: purple;
+  background-color: #f0f2f5;
 }

@@ -1,4 +1,7 @@
 import './App.css';
+import './Header.css';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Topics from './components/Topics';
 import ArticleList from './components/ArticleList';
@@ -8,6 +11,7 @@ import Login from './components/Login';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { ProfileContext } from './contexts/Profile';
+
 
 function App() {
   // To do:
