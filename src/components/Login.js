@@ -29,7 +29,7 @@ const Login = () => {
     return (
         <form onSubmit={attemptLogin} className="login">
             <label className="login__input">
-                Username:
+                Username: (Please login as: jessjelly)
                 <input type="text" name="username" onChange={handleChange}></input>
             </label>
             {error ? <p className="login__error">Invalid Username</p> : <p />}

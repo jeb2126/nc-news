@@ -26,7 +26,16 @@ const Comments = () => {
 
     const handleCommentSubmit = (event) => {
         event.preventDefault();
-        postCommentBody();
+        console.log(newCommentBody.length);
+        if(profile && newCommentBody.length > 0) {
+            postCommentBody();
+        } else if(!profile){
+            alert("please login");
+        } else if (newCommentBody.length <= 0) {
+            alert("Please enter comment");
+        }
+        
+        
     }
 
     const handleCommentChange = (event) => {
