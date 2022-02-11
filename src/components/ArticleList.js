@@ -25,16 +25,17 @@ const ArticleList = () => {
 
     return (
     <div>
-        <h2>Article List</h2>
-        
-            <button onClick={() => handleClick(`votes`, `desc`)}>Top</button>
-            <button onClick={() => handleClick(`created_at`, `desc`)}>New</button>
-            <button onClick={() => handleClick(`comment_count`,`desc`)}>Comment count</button>
+        <h2 className="articleList__header">Article List</h2>
+        <div className="articleList__buttons">
+            <button className="articleList__buttonItem" onClick={() => handleClick(`votes`, `desc`)}>Top</button>
+            <button className="articleList__buttonItem" onClick={() => handleClick(`created_at`, `desc`)}>New</button>
+            <button className="articleList__buttonItem" onClick={() => handleClick(`comment_count`,`desc`)}>Comment count</button>
+        </div>
     
-        <ul>
+        <ul className="articleList__container">
             {articles.map((article) => {
                 return (
-                        <li key={article.article_id} className="articleItems">
+                        <li key={article.article_id} className="articleList__items">
                             <h3><Link to={`/articles/${article.article_id}`}>{article.title}</Link></h3> 
                             <p>{article.author}</p>
                             <p>Comments({article.comment_count})</p>

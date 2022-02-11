@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   list-style: none;
 }
 
@@ -31,6 +31,4 @@
   }
 }
 
-.articleItems {
-  background-color: #f0f2f5;
-}
+

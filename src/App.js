@@ -1,6 +1,7 @@
 import './App.css';
 import './Header.css';
 import './Topics.css';
+import './ArticleList.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';

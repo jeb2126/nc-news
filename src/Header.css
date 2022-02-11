@@ -1,14 +1,23 @@
 .Header {
-    background-color: #5da9dd;
-    padding-top: 10vh;
+    background-color: #1877f2;
+    padding-top: 5vh;
 }
 
 .Header__title {
     color: white;
 }
 
+.Header__title:visited {
+    color: white;
+} 
+
 .Header__Login {
     justify-content: flex-end;
     display: flex;
     margin-right: 5%;
+    color: white;
+}
+
+.Header__Login:visited {
+    color: white;
 }
