@@ -2,12 +2,7 @@ import { useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
 import { fetchCommentsByArticleId, postComment } from "../utils/nc-news-API";
 import { ProfileContext } from "../contexts/Profile";
-import { RemoveComment } from "./RemoveComment";
-
-// create comment form:
-// 2 input: username, body
-// form calls handle click function
-// handle click function
+import RemoveComment from "./RemoveComment";
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
@@ -57,7 +52,7 @@ const Comments = () => {
                                 <p>{comment.votes}</p>
                                 <p>{comment.created_at}</p>
                                 <p>{comment.body}</p>
-                                {/* <RemoveComment /> */}
+                                <RemoveComment comment={comment} commentAuthor={comment.author} comment_id={comment.comment_id}/>
                             </li>
                         
                     )

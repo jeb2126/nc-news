@@ -15,7 +15,7 @@ const ArticleList = () => {
         })
     }, [topic]);
 
-    const handleClick = (topic, sort_by, order) => {
+    const handleClick = (sort_by, order) => {
         fetchArticlesByTopic(topic, sort_by, order).then((items) => {
             setArticles(items);
         }) .catch((err) => {
@@ -27,9 +27,9 @@ const ArticleList = () => {
     <div>
         <h2>Article List</h2>
         
-            <button onClick={() => handleClick(undefined, `votes`, `desc`)}>Top</button>
-            <button onClick={() => handleClick(undefined, `created_at`, `desc`)}>New</button>
-            <button onClick={() => handleClick(undefined, `comment_count`,`desc`)}>Comment count</button>
+            <button onClick={() => handleClick(`votes`, `desc`)}>Top</button>
+            <button onClick={() => handleClick(`created_at`, `desc`)}>New</button>
+            <button onClick={() => handleClick(`comment_count`,`desc`)}>Comment count</button>
     
         <ul>
             {articles.map((article) => {
