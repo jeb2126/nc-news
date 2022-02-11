@@ -21,6 +21,7 @@ const Article = () => {
             <h2>{article.author}</h2>
             {/* votes section */}
             <p>{article.body}</p>
+            <p>Article Votes: {article.votes}</p>
             <Comments />
         </article>
     )

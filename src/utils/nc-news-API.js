@@ -44,8 +44,14 @@ export const fetchCommentsByArticleId = (article_id) => {
 }
 
 export const postComment = (article_id, username, body) => {
+    console.log(article_id, username, body, "<<<<<API")
     return ncNewsApi.post(`/articles/${article_id}/comments`, {username: username, body: body})
-    .then((res) => {
-        return res.data.comments;
-    });
+    // .then((res) => {
+    //     console.log(res.data.comments, "<<<commentsAPI")
+    //     return res.data.comments;
+    // });
+} 
+
+export const deleteComment = (comment_id) => {
+    return ncNewsApi.delete(`/comments/${comment_id}`);
 }
