@@ -2,25 +2,34 @@ import { useState } from "react";
 import { patchArticlesVotes } from "../utils/nc-news-API";
 
 const Voter = (props) => {
-    const [voteChange, setVoteChange] = useState(0);
+  const [voteChange, setVoteChange] = useState(0);
 
-    // create error handling :
-    // // create err useState to null
-    // // setErr "error"
+  // create error handling :
+  // // create err useState to null
+  // // setErr "error"
 
-    const incVotes = (article_id, voteValue) => {
-        setVoteChange((currCount) => currCount + voteValue);
-        patchArticlesVotes(article_id, voteValue);
-        
-    }
+  const incVotes = (article_id, voteValue) => {
+    setVoteChange((currCount) => currCount + voteValue);
+    patchArticlesVotes(article_id, voteValue);
+  };
 
-     return (
+  return (
     <div className="voteButtons">
-     <button onClick={() => incVotes(props.article_id, 1)}>👍 </button>
-     <span>{props.articleVotes + voteChange}</span>
-     <button onClick={() => incVotes(props.article_id, -1)}>👎</button>
-    </div> 
-     )
-}
+      <button
+        onClick={() => incVotes(props.article_id, 1)}
+        className="button__voter"
+      >
+        👍{" "}
+      </button>
+      <span>{props.articleVotes + voteChange}</span>
+      <button
+        onClick={() => incVotes(props.article_id, -1)}
+        className="button__voter"
+      >
+        👎
+      </button>
+    </div>
+  );
+};
 
 export default Voter;

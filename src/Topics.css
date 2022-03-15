@@ -1,18 +1,21 @@
 .topicList {
-    background-color: #f0f2f5;
+  background-color: #f0f2f5;
+  margin: 5%;
 }
 
 .Topics__header {
-    margin-top: 5vh;
+  margin-top: 5vh;
+  padding-top: 5%;
 }
 
 .Topics__link {
-    display: inline;
-    float: left;
-    margin: 2%;
+  display: inline;
+  float: left;
+  margin: 2%;
 }
 
 .Topics__container {
-    display: flex;
-    justify-content:center
+  display: flex;
+  justify-content: center;
+  padding: 3% 0;
 }
