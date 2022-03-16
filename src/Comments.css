@@ -1,0 +1,20 @@
+.commentList__Comments {
+  padding: 0;
+}
+
+.commentHeader__Comments {
+  padding: 5%;
+}
+
+.commentSubmitBtn__Comments {
+  margin: 5%;
+}
+
+.commentListItemHeader__Comments {
+  padding: 5%;
+  margin-top: 5%;
+}
+
+.commentInput__Comments {
+  margin-bottom: 5%;
+}

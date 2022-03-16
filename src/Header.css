@@ -23,3 +23,7 @@
 .Header__Login:visited {
   color: white;
 }
+
+.Header__profileContainer {
+  text-align: right;
+}

@@ -1,24 +1,24 @@
 .articleList__header {
-    margin: 5vh;
-    
+  margin: 5vh;
 }
 
 .articleList__container {
-    padding: 0;
+  padding: 0;
 }
 
 .articleList__buttons {
-    display: flex;
-    justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 .articleList__items {
-    margin: 5%;
-    background-color: #f0f2f5;
-    padding-right: 4%;
-    padding: 5%;
+  margin: 5%;
+  background-color: #f0f2f5;
+  padding-right: 4%;
+  padding: 5%;
 }
 
 .articleList__buttonItem {
-    margin-right: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
 }

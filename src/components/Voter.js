@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { patchArticlesVotes } from "../utils/nc-news-API";
+import { Button } from "@mui/material";
 
 const Voter = (props) => {
   const [voteChange, setVoteChange] = useState(0);
-
-  // create error handling :
-  // // create err useState to null
-  // // setErr "error"
 
   const incVotes = (article_id, voteValue) => {
     setVoteChange((currCount) => currCount + voteValue);
@@ -15,19 +12,19 @@ const Voter = (props) => {
 
   return (
     <div className="voteButtons">
-      <button
+      <Button
         onClick={() => incVotes(props.article_id, 1)}
         className="button__voter"
       >
-        👍{" "}
-      </button>
+        👍
+      </Button>
       <span>{props.articleVotes + voteChange}</span>
-      <button
+      <Button
         onClick={() => incVotes(props.article_id, -1)}
         className="button__voter"
       >
         👎
-      </button>
+      </Button>
     </div>
   );
 };

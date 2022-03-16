@@ -1,0 +1,11 @@
+.article__Article {
+  margin: 5%;
+  margin-top: 10%;
+  background-color: #f0f2f5;
+  padding: 5%;
+}
+
+.subHeader__Article {
+  padding: 5%;
+  font-size: 1.2em;
+}

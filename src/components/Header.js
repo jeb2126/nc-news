@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { ProfileContext } from "../contexts/Profile";
 import { useContext } from "react";
 import Profile from "./Profile";
+import Box from "@mui/material/Box";
+import { Button } from "@mui/material";
 
 export const Header = () => {
   const loginLink = (
@@ -20,9 +22,15 @@ export const Header = () => {
 
   if (profile) {
     loggedInAs = (
-      <div>
-        <button onClick={logout}>Logout</button>
-        <Profile />
+      <div className="Header__profileContainer">
+        <Box mb={2}>
+          <Button variant="contained" onClick={logout}>
+            Logout
+          </Button>
+        </Box>
+        <Box>
+          <Profile />
+        </Box>
       </div>
     );
   }
