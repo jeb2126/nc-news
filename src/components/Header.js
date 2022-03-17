@@ -24,7 +24,7 @@ export const Header = () => {
     loggedInAs = (
       <div className="Header__profileContainer">
         <Box mb={2}>
-          <Button variant="contained" onClick={logout}>
+          <Button variant="contained" color="warning" onClick={logout}>
             Logout
           </Button>
         </Box>

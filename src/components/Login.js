@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={attemptLogin} className="login">
+    <form onClick={attemptLogin} className="login">
       <label className="loginLabel__Login">
         Username: (Please login as: jessjelly)
         <input
@@ -39,9 +39,9 @@ const Login = () => {
         ></input>
       </label>
       {error ? <p className="loginError__Login">Invalid Username</p> : <p />}
-      <button variant="contained" className="loginSubmitBtn__Login">
+      <Button variant="contained" className="loginSubmitBtn__Login">
         Login
-      </button>
+      </Button>
     </form>
   );
 };
