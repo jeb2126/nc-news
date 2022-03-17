@@ -14,7 +14,7 @@ import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
 import Comments from "./components/Comments";
 import Login from "./components/Login";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ProfileContext } from "./contexts/Profile";
 

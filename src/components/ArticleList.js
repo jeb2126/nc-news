@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  fetchArticles,
-  fetchArticlesByTopic,
-  patchArticlesVotes,
-} from "../utils/nc-news-API";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { fetchArticlesByTopic } from "../utils/nc-news-API";
+import { useParams, Link } from "react-router-dom";
 import Voter from "./Voter";
-import Article from "./Article";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 
