@@ -17,7 +17,6 @@ const Article = () => {
     <article className="article__Article">
       <h1 className="header__Article">{article.title}</h1>
       <h2 className="subHeader__Article">{article.author}</h2>
-      {/* votes section */}
       <p>{article.body}</p>
       <p>Article Votes: {article.votes}</p>
       <Comments />

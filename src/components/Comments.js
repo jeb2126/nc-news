@@ -51,7 +51,7 @@ const Comments = () => {
   return (
     <div className="Comments">
       <h2 className="commentHeader__Comments">Comments</h2>
-      <form onSubmit={handleCommentSubmit}>
+      <form onClick={handleCommentSubmit}>
         <input
           type="text"
           placeholder="Comment here..."
