@@ -31,7 +31,7 @@ Once done press enter to create a local clone of the repository.
 
 ### Step 2 - Open correct project folder
 
-To ensure the correct project folder is open type into the Terminal: cd NC-News
+To ensure the correct project folder is open type into the Terminal: cd nc-news
 
 ### Step 3 - Run app in development mode
 
